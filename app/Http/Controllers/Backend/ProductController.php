@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Backend\ProductModel;
+use Symfony\Component\Console\Helper\ProgressBar;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,7 @@ class ProductController extends Controller
         $product->price = $req->price;
         $product->status = $req->status;
         $product->save();
-
+        toastr()->success('Data has been saved successfully!');
         return redirect()->route("showproduct");
         // dd($pinfo);
     }
@@ -55,6 +56,7 @@ class ProductController extends Controller
         $product->price = $req->price;
         $product->status = $req->status;
         $product->update();
+        toastr()->info('Data has updated successfully!');
         return redirect()->route("showproduct");
         // dd($pinfo);
     }
@@ -62,6 +64,7 @@ class ProductController extends Controller
     public function delete($id){
         $product = ProductModel::find($id);
         $product->delete();
+        toastr()->warning('Data has deleted successfully!');
         return redirect()->route("showproduct");
     }
 
@@ -74,6 +77,7 @@ class ProductController extends Controller
             $product->status = 1;
         }
         $product->update();
+        toastr()->info('Status has changed successfully!');
         return redirect()->route("showproduct");
     }
 

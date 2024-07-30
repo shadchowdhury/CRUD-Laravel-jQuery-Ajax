@@ -32,12 +32,50 @@ jQuery(document).ready(function () {
             success: function (response) {
                 if (response["status"] == "408") {
                     show();
+                    Command: toastr["error"]("Data has not updated Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                     jQuery("#editModal").modal("hide");
                     jQuery('.msg').html('<div class="alert alert-danger">Data has Not Updated</div>');
                     jQuery('.alert').fadeOut(1000);
 
                 } else if (response["status"] == "success") {
                     show();
+                    Command: toastr["info"]("Data has updated Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                     jQuery("#editModal").modal("hide");
                     jQuery('.msg').html('<div class="alert alert-success">Data has Updated Saved</div>');
                     jQuery('.alert').fadeOut(1000);
@@ -90,11 +128,50 @@ jQuery(document).ready(function () {
             success: function (response) {
                 if (response.status == "success") {
                     show();
+                    Command: toastr["warning"]("Data has deleted Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+
                     jQuery("#deleteModal").modal("hide");
                     jQuery('.msg').html('<div class="alert alert-success">Data has deleted</div>');
                     jQuery('.alert').fadeOut(1000);
                 } else {
                     show();
+                    Command: toastr["error"]("Data has not deleted Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                     jQuery("#deleteModal").modal("hide");
                     jQuery('.msg').html('<div class="alert alert-danger">Data has not deleted</div>');
                     jQuery('.alert').fadeOut(1000);
@@ -127,7 +204,7 @@ jQuery(document).ready(function () {
                             <td>'+ item.phone + '</td>\
                             <td>'+ item.email + '</td>\
                             <td>'+ statusDisplay + '</td>\
-                            <td><button class="edit btn btn-info btn-sm" value="'+ item.id + '" data-bs-toggle="modal" data-bs-target="#editeModal"><i class="fa fa-edit"></i></button>\
+                            <td><button class="edit btn btn-info btn-sm" value="'+ item.id + '" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-edit"></i></button>\
                                 <button class="delete btn btn-danger btn-sm" value="'+ item.id + '" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>\
                             </td>\
                         </tr>';
@@ -172,6 +249,25 @@ jQuery(document).ready(function () {
             success: function (response) {
                 if (response["msg"] == "404") {
                     show();
+                    Command: toastr["error"]("Data has not saved Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                     jQuery('.msg').html('<div class="alert alert-danger">Data Not Saved</div>');
                     jQuery('.alert').fadeOut(1000);
                     jQuery(".fName").val("");
@@ -185,6 +281,25 @@ jQuery(document).ready(function () {
                     // alert("Data Not Saved");
                 } else if (response.msg == "success") {
                     show();
+                    Command: toastr["success"]("Data has saved Successfully!")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                     jQuery('.msg').html('<div class="alert alert-success">Data Saved</div>');
                     jQuery('.alert').fadeOut(1000);
                     jQuery(".fName").val("");
@@ -213,6 +328,25 @@ jQuery(document).ready(function () {
             success: function(response){
                 if (response.status == "success") {
                     show();
+                    Command: toastr["info"]("Status has changed Successfully!")
+
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "3000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
                     jQuery('.msg').html('<div class="alert alert-success">Status has Changed</div>');
                     jQuery('.alert').fadeOut(1000);
                 }
